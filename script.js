@@ -59,6 +59,20 @@ document.addEventListener('DOMContentLoaded', () => {
         appearOnScroll.observe(element);
     });
 
+    // 4. Accordion Logic
+    const accordions = document.querySelectorAll('.accordion');
+    accordions.forEach(acc => {
+        acc.addEventListener('click', function() {
+            this.classList.toggle('active');
+            const panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            } 
+        });
+    });
+
     // Form submission prevention (for demo)
     const form = document.querySelector('.contact-form');
     if(form) {

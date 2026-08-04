@@ -31,6 +31,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 100px; /* Offset for fixed header */
     font-size: 16px;
 }
 
@@ -235,6 +236,65 @@ nav {
     width: 100%;
 }
 
+/* Dropdown */
+.dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-icon {
+    font-size: 0.8rem;
+    margin-left: 0.25rem;
+    transition: var(--transition);
+}
+
+.dropdown-content {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    min-width: 260px;
+    box-shadow: var(--shadow-lg);
+    border-radius: 12px;
+    padding: 0.5rem 0;
+    z-index: 1000;
+    transition: var(--transition);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.dropdown-content a {
+    color: var(--text-main);
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    display: block;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.dropdown-content a::after {
+    display: none;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(22, 125, 127, 0.05);
+    color: var(--primary);
+}
+
+.dropdown:hover .dropdown-content {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.dropdown:hover .dropdown-icon {
+    transform: rotate(180deg);
+}
+
 .hamburger {
     display: none;
     font-size: 1.5rem;
@@ -411,86 +471,124 @@ nav {
 }
 
 /* Services Section */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+/* Services Section (Accordion) */
+.service-blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
 }
 
-.service-card {
+.service-block {
     background-color: var(--bg-main);
     border-radius: 24px;
     padding: 3rem;
     box-shadow: var(--shadow-sm);
-    transition: var(--transition);
     border: 1px solid rgba(0,0,0,0.03);
     position: relative;
-    overflow: hidden;
-    z-index: 1;
 }
 
-.service-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, var(--primary), var(--secondary));
-    opacity: 0;
-    transition: var(--transition);
+.service-header {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    margin-bottom: 2rem;
 }
 
-.service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-lg);
-}
-
-.service-card:hover::before {
-    opacity: 1;
-}
-
-.card-icon {
-    width: 70px;
-    height: 70px;
-    border-radius: 16px;
+.service-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
     background: linear-gradient(135deg, rgba(22, 125, 127, 0.1), rgba(22, 125, 127, 0.05));
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: var(--primary);
-    margin-bottom: 1.5rem;
+    flex-shrink: 0;
+}
+
+.service-title-area h3 {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.service-title-area p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    max-width: 800px;
+}
+
+/* Accordion */
+.accordion {
+    background-color: rgba(22, 125, 127, 0.05);
+    color: var(--primary-dark);
+    cursor: pointer;
+    padding: 1.25rem;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
     transition: var(--transition);
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.service-card:hover .card-icon {
-    background: var(--primary);
+.accordion:hover, .accordion.active {
+    background-color: var(--primary);
     color: white;
-    transform: scale(1.1) rotate(-5deg);
 }
 
-.service-card h3 {
-    font-size: 1.75rem;
-    margin-bottom: 1.5rem;
+.accordion-icon {
+    transition: transform 0.3s ease;
 }
 
-.service-card ul {
+.accordion.active .accordion-icon {
+    transform: rotate(45deg);
+}
+
+.panel {
+    padding: 0 1rem;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+}
+
+.panel-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    padding: 2rem 0;
+}
+
+.panel-column h4 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--secondary);
+}
+
+.panel-column ul {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.75rem;
 }
 
-.service-card li {
+.panel-column li {
     display: flex;
     gap: 1rem;
     align-items: flex-start;
     color: var(--text-light);
+    font-size: 1rem;
 }
 
-.service-card li i {
-    color: var(--secondary);
-    margin-top: 5px;
+.panel-column li i {
+    color: var(--primary-light);
+    margin-top: 4px;
 }
 
 /* Why Us Section */

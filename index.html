@@ -19,14 +19,20 @@
     <header id="navbar">
         <div class="container nav-container">
             <div class="logo">
-                <img src="img/logo.png" alt="Holo Service Logo" class="logo-img">
+                <img src="logo.png" alt="Holo Service Logo" class="logo-img">
                 <span>HOLO SERVICE</span>
             </div>
             <nav>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">Chi Siamo</a></li>
-                    <li><a href="#services">Servizi</a></li>
+                    <li class="dropdown">
+                        <a href="#services" class="dropbtn">Servizi <i class="fa-solid fa-chevron-down dropdown-icon"></i></a>
+                        <div class="dropdown-content">
+                            <a href="#pulizie">Pulizie e Disinfezione</a>
+                            <a href="#portierato">Portierato e Reception</a>
+                        </div>
+                    </li>
                     <li><a href="#why-us">Perché Noi</a></li>
                 </ul>
                 <a href="#contact" class="btn btn-primary">Contattaci</a>
@@ -58,21 +64,22 @@
         <div class="container about-container">
             <div class="about-text fade-in-up">
                 <h2>Chi Siamo</h2>
-                <p>In <strong>Holo Service</strong>, crediamo che un ambiente curato sia il biglietto da visita di ogni realtà di successo. Offriamo soluzioni integrate e all'avanguardia per la gestione degli spazi, garantendo standard elevati e un approccio innovativo.</p>
-                <p>L'impiego di prodotti eco-sostenibili e la formazione continua del nostro personale ci permettono di rispondere con efficienza ed eleganza alle esigenze di ogni cliente.</p>
+                <h3 class="subtitle">Eccellenza dal 2010</h3>
+                <p>Attiva sul mercato dal <strong>2010</strong>, Holo Service rappresenta un partner solido e fidato per il facility management. La nostra missione è garantire standard di eccellenza, elevando la qualità della vita e la sicurezza negli ambienti di lavoro e abitativi.</p>
+                <p>Siamo fieri di essere un'azienda <strong>professionale, affidabile e con una maniacale attenzione al dettaglio</strong>. Ogni nostro intervento è guidato da un forte senso di responsabilità verso l'ambiente: utilizziamo prodotti ecosostenibili per assicurare igiene profonda minimizzando l'impatto ecologico.</p>
                 <ul class="about-features">
-                    <li><i class="fa-solid fa-check-circle"></i> Affidabilità comprovata</li>
-                    <li><i class="fa-solid fa-check-circle"></i> Prodotti eco-sostenibili</li>
-                    <li><i class="fa-solid fa-check-circle"></i> Personale qualificato</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Oltre un decennio di esperienza consolidata</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Sostenibilità e coscienza ambientale attiva</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Precisione, affidabilità e cura dei minimi dettagli</li>
                 </ul>
             </div>
             <div class="about-image fade-in-up delay-1">
                 <div class="image-placeholder">
-                    <i class="fa-solid fa-building-user"></i>
+                    <i class="fa-solid fa-leaf"></i>
                 </div>
                 <div class="experience-badge">
-                    <span class="number">100%</span>
-                    <span class="text">Clienti<br>Soddisfatti</span>
+                    <span class="number">2010</span>
+                    <span class="text">Anno di<br>Fondazione</span>
                 </div>
             </div>
         </div>
@@ -83,32 +90,86 @@
         <div class="container">
             <div class="section-title fade-in-up">
                 <h2>Le Nostre Competenze</h2>
-                <p>Due pilastri fondamentali per garantire il massimo del decoro e della sicurezza.</p>
+                <p>Due pilastri fondamentali per garantire il massimo del decoro, dell'igiene e della sicurezza.</p>
             </div>
-            <div class="services-grid">
-                <!-- Card 1 -->
-                <div class="service-card fade-in-up delay-1">
-                    <div class="card-icon">
-                        <i class="fa-solid fa-broom-ball"></i>
+            
+            <div class="service-blocks">
+                <!-- Pulizie -->
+                <div id="pulizie" class="service-block fade-in-up delay-1">
+                    <div class="service-header">
+                        <div class="service-icon"><i class="fa-solid fa-broom-ball"></i></div>
+                        <div class="service-title-area">
+                            <h3>Pulizie e Disinfezione</h3>
+                            <p>Igiene ambientale di altissimo livello garantita dall'uso di prodotti a basso impatto ecologico (in stile Ecolabel). Offriamo servizi continuativi e specializzati per privati, condomini, aziende, centri logistici e settore Ho.Re.Ca., assicurando sempre qualità, precisione e massima efficienza operativa.</p>
+                        </div>
                     </div>
-                    <h3>Pulizie e Disinfezione</h3>
-                    <ul>
-                        <li><i class="fa-solid fa-angle-right"></i> Pulizia Uffici</li>
-                        <li><i class="fa-solid fa-angle-right"></i> Pulizia Abitazioni e Condomini</li>
-                        <li><i class="fa-solid fa-angle-right"></i> Pulizie di Fine Cantiere</li>
-                    </ul>
+                    
+                    <button class="accordion">Esplora i dettagli del servizio <i class="fa-solid fa-plus accordion-icon"></i></button>
+                    <div class="panel">
+                        <div class="panel-content">
+                            <div class="panel-column">
+                                <h4>Ambiti di Intervento</h4>
+                                <ul>
+                                    <li><i class="fa-solid fa-check"></i> Pulizia uffici e ambienti direzionali</li>
+                                    <li><i class="fa-solid fa-check"></i> Servizi residenziali per abitazioni e condomini</li>
+                                    <li><i class="fa-solid fa-check"></i> Pulizie di sgrosso e fine cantiere</li>
+                                    <li><i class="fa-solid fa-check"></i> Manutenzione per poli logistici e magazzini</li>
+                                    <li><i class="fa-solid fa-check"></i> Sanificazione e decoro per strutture Ho.Re.Ca.</li>
+                                </ul>
+                            </div>
+                            <div class="panel-column">
+                                <h4>Attività Principali</h4>
+                                <ul>
+                                    <li><i class="fa-solid fa-check"></i> Spolveratura a umido di arredi e superfici di lavoro</li>
+                                    <li><i class="fa-solid fa-check"></i> Vuotatura dei cestini e sostituzione dei sacchetti</li>
+                                    <li><i class="fa-solid fa-check"></i> Scopatura antistatica di pavimenti e ingressi</li>
+                                    <li><i class="fa-solid fa-check"></i> Aspirazione accurata di moquette e tappeti</li>
+                                    <li><i class="fa-solid fa-check"></i> Rimozione di ditate da vetri, porte e superfici lucide</li>
+                                    <li><i class="fa-solid fa-check"></i> Arieggiamento e ricambio d'aria degli ambienti</li>
+                                    <li><i class="fa-solid fa-check"></i> Lavaggio manuale dei pavimenti con attrezzature professionali</li>
+                                    <li><i class="fa-solid fa-check"></i> Rimozione ragnatele e spolveratura di fino nei dettagli</li>
+                                    <li><i class="fa-solid fa-check"></i> Pulizia profonda di scale, ascensori e vetrate (interne ed esterne)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- Card 2 -->
-                <div class="service-card fade-in-up delay-2">
-                    <div class="card-icon">
-                        <i class="fa-solid fa-user-shield"></i>
+
+                <!-- Portierato -->
+                <div id="portierato" class="service-block fade-in-up delay-2">
+                    <div class="service-header">
+                        <div class="service-icon"><i class="fa-solid fa-user-shield"></i></div>
+                        <div class="service-title-area">
+                            <h3>Portierato e Reception</h3>
+                            <p>Professionalità, prontezza e affidabilità per la gestione degli accessi e l'accoglienza. Aiutiamo i nostri clienti a individuare le soluzioni di sicurezza e ricezione più adatte, assicurando operazioni quotidiane fluide e un servizio di front-desk impeccabile, supportato da spiccate capacità di problem-solving.</p>
+                        </div>
                     </div>
-                    <h3>Portierato e Reception</h3>
-                    <ul>
-                        <li><i class="fa-solid fa-angle-right"></i> Controllo accessi e accoglienza visitatori</li>
-                        <li><i class="fa-solid fa-angle-right"></i> Assistenza clienti con personale altamente qualificato e multilingue</li>
-                        <li><i class="fa-solid fa-angle-right"></i> Gestione sicura e professionale dei flussi aziendali</li>
-                    </ul>
+                    
+                    <button class="accordion">Esplora i dettagli del servizio <i class="fa-solid fa-plus accordion-icon"></i></button>
+                    <div class="panel">
+                        <div class="panel-content">
+                            <div class="panel-column">
+                                <h4>Accoglienza e Organizzazione</h4>
+                                <ul>
+                                    <li><i class="fa-solid fa-check"></i> Servizio di reception professionale e accoglienza clienti</li>
+                                    <li><i class="fa-solid fa-check"></i> Portierato e assistenza continua per condomini ed edifici</li>
+                                    <li><i class="fa-solid fa-check"></i> Gestione del centralino e smistamento chiamate</li>
+                                    <li><i class="fa-solid fa-check"></i> Supporto organizzativo per congressi, fiere ed eventi</li>
+                                    <li><i class="fa-solid fa-check"></i> Gestione impeccabile del front-desk e assistenza continua</li>
+                                </ul>
+                            </div>
+                            <div class="panel-column">
+                                <h4>Sicurezza e Controllo</h4>
+                                <ul>
+                                    <li><i class="fa-solid fa-check"></i> Controllo attento e registrazione degli accessi</li>
+                                    <li><i class="fa-solid fa-check"></i> Supporto e tutela tramite servizi di sicurezza non armata</li>
+                                    <li><i class="fa-solid fa-check"></i> Screening della temperatura corporea all'ingresso</li>
+                                    <li><i class="fa-solid fa-check"></i> Selezione rigorosa di receptionist e steward qualificati</li>
+                                    <li><i class="fa-solid fa-check"></i> Presidio costante per la salvaguardia degli stabili</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -203,9 +264,9 @@
     <footer>
         <div class="container footer-content">
             <div class="footer-logo">
-                <img src="img/logo.png" alt="Holo Service Logo" class="footer-logo-img"> Holo Service
+                <img src="logo.png" alt="Holo Service Logo" class="footer-logo-img"> Holo Service
             </div>
-            <p>&copy; 2026 Holo Service. Tutti i diritti riservati. P.IVA 12345678901</p>
+            <p>&copy; 2010 Holo Service. Tutti i diritti riservati. P.IVA 12345678901</p>
             <div class="social-links">
                 <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
                 <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
