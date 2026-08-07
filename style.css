@@ -117,7 +117,7 @@ ul {
 }
 
 .section-padding {
-    padding: 6rem 0;
+    padding: 8rem 0;
 }
 
 .bg-light {
@@ -126,7 +126,7 @@ ul {
 
 .section-title {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
 }
 
 .section-title h2 {
@@ -334,13 +334,15 @@ nav {
     color: var(--primary);
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown-content,
+.dropdown.open .dropdown-content {
     visibility: visible;
     opacity: 1;
     transform: translateX(-50%) translateY(0);
 }
 
-.dropdown:hover .dropdown-icon {
+.dropdown:hover .dropdown-icon,
+.dropdown.open .dropdown-icon {
     transform: rotate(180deg);
 }
 
@@ -524,7 +526,7 @@ nav {
 .service-blocks {
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 4rem;
 }
 
 .service-block {
@@ -611,8 +613,8 @@ nav {
 .panel-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    padding: 2rem 0;
+    gap: 4rem;
+    padding: 3rem 0;
 }
 
 .panel-column h4 {
@@ -914,6 +916,7 @@ footer p {
 }
 
 @media (max-width: 768px) {
+    .section-padding { padding: 6rem 0; }
     .hamburger { display: block; }
     nav {
         position: fixed;
@@ -938,14 +941,20 @@ footer p {
     .hero h1 { font-size: 2.5rem; }
     .hero-buttons { flex-direction: column; }
     .section-title h2 { font-size: 2rem; }
+    .service-header { 
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center; 
+        gap: 1.5rem; 
+    }
 }
 
 @media (max-width: 480px) {
-    .container { padding: 0 1rem; }
+    .container { padding: 0 1.25rem; }
     .features-grid { grid-template-columns: 1fr; }
-    .section-padding { padding: 2rem 0; }
-    .hero { padding-top: 100px; }
-    .service-block { padding: 1.5rem; }
-    .contact-form-wrapper, .contact-info-card { padding: 1.5rem; }
+    .section-padding { padding: 5rem 0; }
+    .hero { padding-top: 130px; padding-bottom: 5rem; }
+    .service-block { padding: 2.5rem 1.5rem; }
+    .contact-form-wrapper, .contact-info-card { padding: 2.5rem 1.5rem; }
     .about-text h2, .section-title h2 { font-size: 1.75rem; }
 }
