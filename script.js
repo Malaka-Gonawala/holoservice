@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Mobile Navigation Toggle
     const hamburger = document.querySelector('.hamburger');
     const nav = document.querySelector('nav');
-    const navLinks = document.querySelectorAll('.nav-links a');
+    const navLinks = document.querySelectorAll('nav a');
     const hamburgerIcon = document.querySelector('.hamburger i');
 
     hamburger.addEventListener('click', () => {
