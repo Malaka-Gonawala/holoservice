@@ -1,3 +1,14 @@
+// Hide loading screen when page is fully loaded
+window.addEventListener('load', () => {
+    const loader = document.getElementById('loader');
+    if(loader) {
+        // Add a slight delay to ensure the animation is seen (optional)
+        setTimeout(() => {
+            loader.classList.add('hidden');
+        }, 300);
+    }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Mobile Navigation Toggle
     const hamburger = document.querySelector('.hamburger');
@@ -73,23 +84,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Form submission prevention (for demo)
-    const form = document.querySelector('.contact-form');
-    if(form) {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const btn = form.querySelector('button');
-            const originalText = btn.innerText;
-            btn.innerText = "Messaggio Inviato!";
-            btn.style.backgroundColor = "#c6a85e";
-            btn.style.boxShadow = "none";
-            
-            setTimeout(() => {
-                form.reset();
-                btn.innerText = originalText;
-                btn.style.backgroundColor = "";
-                btn.style.boxShadow = "";
-            }, 3000);
-        });
-    }
 });
