@@ -950,6 +950,7 @@ footer p {
 }
 
 @media (max-width: 480px) {
+    html { scroll-padding-top: 20px; }
     .container { padding: 0 1.25rem; }
     .features-grid { grid-template-columns: 1fr; }
     .section-padding { padding: 5rem 0; }
